@@ -1,0 +1,33 @@
+{
+  "name": "IITB Network Auto-Login",
+  "version": "1.0",
+  "manifest_version": 2,
+
+  "icons": {
+    "16" : "iitb_16.png",
+    "48" : "iitb_48.png",
+    "128" : "iitb_128.png"
+  },
+
+  "browser_action": {
+    "default_title": "IITB Internet Auto-Login",
+    "default_icon": "iitb_16.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://internet.iitb.ac.in/*"],
+      "js": ["content.js"]
+    }
+  ],
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "permissions":[
+	"tabs",
+	"<all_urls>",
+  "*://*/*"
+  ]
+}
